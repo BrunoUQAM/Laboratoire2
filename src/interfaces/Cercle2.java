@@ -40,7 +40,7 @@ public class Cercle2 implements ElementGraphiqueInter {
                 + "\n----------------\n";
     }
 
-    public int getLongueurRayon() {
+    private int getLongueurRayon() {
         return longueurRayon;
     }
 
@@ -48,7 +48,7 @@ public class Cercle2 implements ElementGraphiqueInter {
         this.longueurRayon = longueurRayon;
     }
 
-    public int getX() {
+    private int getX() {
         return x;
     }
 
@@ -56,7 +56,7 @@ public class Cercle2 implements ElementGraphiqueInter {
         this.x = x;
     }
 
-    public int getY() {
+    private int getY() {
         return y;
     }
 

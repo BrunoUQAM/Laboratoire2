@@ -1,6 +1,8 @@
 package abstraites;
 
 /**
+ * Classe qui dérive la classe abstraite {@link ElementGraphique}
+ *
  * Created by bruno on 2017-05-19.
  */
 public class Cercle extends ElementGraphique {
@@ -37,7 +39,7 @@ public class Cercle extends ElementGraphique {
                 + "\n----------------\n";
     }
 
-    public int getLongueurRayon() {
+    private int getLongueurRayon() {
         return longueurRayon;
     }
 

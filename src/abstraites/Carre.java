@@ -1,6 +1,9 @@
 package abstraites;
 
 /**
+ *
+ * Classe qui dérive la classe abstraite {@link ElementGraphique}
+ *
  * Created by bruno on 2017-05-19.
  */
 public class Carre  extends ElementGraphique {
