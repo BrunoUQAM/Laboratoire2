@@ -9,7 +9,7 @@ public abstract class ElementGraphique {
         return "position : ( " + x + ", " + y + " )";
     }
     
-    public void placer ( int x, int y ) {
+    void placer ( int x, int y ) {
         this.x = x;
         this.y = y;
     }

@@ -1,5 +1,7 @@
 package abstraites;
 
+import utilities.Utilities;
+
 /**
  *
  * Classe qui dérive la classe abstraite {@link ElementGraphique}
@@ -8,18 +10,38 @@ package abstraites;
  */
 public class Carre  extends ElementGraphique {
 
+    // Variables de classes
+
     private int longueurCote;
 
+    // Constructeur
+
+    /**
+     * Constructeur à trois paramètre
+     * @param x sa position x
+     * @param y sa position y
+     * @param longueurCote la longueur d'un côté
+     */
     public Carre(int x, int y, int longueurCote) {
         placer(x,y);
         setLongueurCote(longueurCote);
     }
 
+    // Méthodes
+
+    /**
+     * Calcul la surface du carré
+     * @return sa surface
+     */
     @Override
      public double surface() {
         return Math.pow(getLongueurCote(), 2);
     }
 
+    /**
+     * Calcul le périmètre du carré
+     * @return son périmètre
+     */
     @Override
     public double perimetre () {
         return 4 * getLongueurCote();
@@ -28,19 +50,23 @@ public class Carre  extends ElementGraphique {
     @Override
     public String toString() {
         return super.toString()
-                + "\n"
+                + Utilities.LINE_SKIP
                 + "Longeur d'un cote : "
                 + getLongueurCote()
-                + "\n"
+                + Utilities.LINE_SKIP
                 + "Sa surface est : "
                 + surface()
-                + "\n"
+                + Utilities.LINE_SKIP
                 + "Son périmètre est : "
                 + perimetre()
-                + "\n----------------\n";
+                + Utilities.LINE_SKIP
+                + "-------------------------"
+                + Utilities.LINE_SKIP;
     }
 
-    public int getLongueurCote() {
+    // Getters et Setters
+
+    private int getLongueurCote() {
         return longueurCote;
     }
 

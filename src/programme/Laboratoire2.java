@@ -20,13 +20,14 @@ public class Laboratoire2 {
      *
      * Classe utilisée pour créer les éléments graphique et les affichés
      *
-     * @param args
+     * @param args arguments d'initialisation
      */
     public static void main(String [] args){
 
-        // ---------------------------------------------------------------------------
+        /* ---------------------------------------------------------------------------
         // Section no.1 - Classe abstraites
-        // ---------------------------------------------------------------------------
+        // -------------------------------------------------------------------------
+        */
 
         ElementGraphique carre = new Carre(5,5, 10);
         ElementGraphique cercle = new Cercle(1, 2, 3);
@@ -35,12 +36,12 @@ public class Laboratoire2 {
         elementGraphiques[0] = carre;
         elementGraphiques[1] = cercle;
 
-        System.out.println("Affichage des classes abstraites : \n");
-        System.out.print(affichageClassesAbraites(elementGraphiques));
+        printThisString("Affichage des classes abstraites : \n" + affichageClassesAbraites(elementGraphiques));
 
-        // ---------------------------------------------------------------------------
+        /* ---------------------------------------------------------------------------
         // Section no.2 - Interfaces
         // ---------------------------------------------------------------------------
+        */
 
         ElementGraphiqueInter carre2 = new Carre2(5,5,10);
         ElementGraphiqueInter cercle2 = new Cercle2(1,2,3);
@@ -49,8 +50,7 @@ public class Laboratoire2 {
         elementGraphiqueInters[0] = carre2;
         elementGraphiqueInters[1] = cercle2;
 
-        System.out.println("\nAffichage des classes implémentant les interfaces : \n");
-        System.out.print(affichageClassesInterface(elementGraphiqueInters));
+        printThisString("\nAffichage des classes implémentant les interfaces : \n" + affichageClassesInterface(elementGraphiqueInters));
 
     }
 
@@ -62,15 +62,15 @@ public class Laboratoire2 {
      * @return Une chaîne de caractères avec le contenu dans chaque élément graphique
      */
     private static String affichageClassesAbraites(ElementGraphique [] elementGraphiques) {
-        String affichage = "";
+        StringBuilder affichage = new StringBuilder();
 
         for (ElementGraphique element: elementGraphiques) {
             if (element != null) {
-                affichage += element.toString();
+                affichage.append(element);
             }
         }
 
-        return  affichage;
+        return affichage.toString();
     }
 
     /**
@@ -81,15 +81,24 @@ public class Laboratoire2 {
      * @return Une chaîne de caractères avec le contenu dans chaque élément graphique
      */
     private static String affichageClassesInterface(ElementGraphiqueInter [] elementGraphiques) {
-        String affichage = "";
+        StringBuilder affichage = new StringBuilder();
 
         for (ElementGraphiqueInter element: elementGraphiques) {
             if (element != null) {
-                affichage += element.toString();
+                affichage.append(element);
             }
         }
 
-        return  affichage;
+        return affichage.toString();
+    }
+
+    /**
+     * Affichage du message envoyé
+     *
+     * @param message Le message qui doit être affiché
+     */
+    private static void printThisString(String message) {
+        System.out.println(message);
     }
 
 }
